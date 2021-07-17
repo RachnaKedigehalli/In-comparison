@@ -15,7 +15,7 @@
     /* sizes */
     --heading: 72px;
     --form-input: 20px;
-    --button: 24px;
+    --sub-heading: 24px;
 }
 
 *{
@@ -28,11 +28,16 @@
 .banner {
     background-color: var(--navy-blue);
     text-align: center;
-    padding: 140px 0 110px;
+    padding: 112px 0 85px;
 }
 .heading {
     font-size: var(--heading);
     color: var(--pink);
+}
+.sub-heading {
+    color: var(--light-pink);
+    font-size: var(--sub-heading);
+    margin-top: 25px;
 }
 
 form label {
@@ -40,18 +45,29 @@ form label {
 }
 form input {
     background-color: var(--navy-blue);
-    border: 1px var(--light-pink) solid;
+    border: 1px solid var(--light-pink);
     border-radius: 5px;
     padding: 10px 15px;
     font-size: var(--form-input);
+    color: var(--light-pink);
+    margin-right: 24px;
+}
+form input::placeholder {
     color: rgba(255, 245, 253, 0.6);
 }
 form button {
     background-color: var(--pink);
     color: var(--light-pink);
-    font-size: var(--button);
+    font-size: var(--sub-heading);
     font-weight: var(--medium);
     border: 0;
     padding: 10px 20px;
     border-radius: 5px;
+}
+.input-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 65px 0 40px;
 }
