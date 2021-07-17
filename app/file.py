@@ -1,5 +1,5 @@
 from instagramy import InstagramUser
-user = InstagramUser("geeks_for_geeks")
+user = InstagramUser("instagram")
  
 # printing the basic details like
 # followers, following, bio
