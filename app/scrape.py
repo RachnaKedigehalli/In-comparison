@@ -1,8 +1,8 @@
 from instagramy import InstagramUser
 
 def user_info(username):
-    user = InstagramUser(username)
-    if user:
+    try:
+        user = InstagramUser(username)
         if user.is_private:
             return "Enter username of a public account"
         else:
@@ -26,5 +26,5 @@ def user_info(username):
             data["likes"] = likes
             data["comments"] = comments
             return data
-    else:
+    except:
         return "Username does not exist"

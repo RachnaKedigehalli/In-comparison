@@ -11,6 +11,7 @@ submitBtn.addEventListener('click', function(event) {
             try {
                 var userData = JSON.parse(this.responseText);
                 console.log(userData);
+                // document.getElementById('content').innerHTML = ;
             }
             
             catch(err) {

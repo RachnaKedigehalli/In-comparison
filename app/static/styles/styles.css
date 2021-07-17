@@ -24,7 +24,9 @@
     font-family: 'Raleway', sans-serif;
     font-style: normal;
 }
-
+body {
+    background-color: var(--light-pink);
+}
 #banner {
     background-color: var(--navy-blue);
     text-align: center;
@@ -63,6 +65,9 @@ input::placeholder {
     border: 0;
     padding: 10px 20px;
     border-radius: 5px;
+}
+#submit-btn:hover {
+    cursor: pointer;
 }
 .input-row {
     display: flex;
