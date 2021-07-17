@@ -14,20 +14,44 @@
 
     /* sizes */
     --heading: 72px;
+    --form-input: 20px;
+    --button: 24px;
 }
 
 *{
     margin: 0;
     box-sizing: border-box;
     font-family: 'Raleway', sans-serif;
+    font-style: normal;
 }
 
 .banner {
     background-color: var(--navy-blue);
     text-align: center;
-    padding: 140px 0 60px;
+    padding: 140px 0 110px;
 }
 .heading {
     font-size: var(--heading);
     color: var(--pink);
+}
+
+form label {
+    display: none;
+}
+form input {
+    background-color: var(--navy-blue);
+    border: 1px var(--light-pink) solid;
+    border-radius: 5px;
+    padding: 10px 15px;
+    font-size: var(--form-input);
+    color: rgba(255, 245, 253, 0.6);
+}
+form button {
+    background-color: var(--pink);
+    color: var(--light-pink);
+    font-size: var(--button);
+    font-weight: var(--medium);
+    border: 0;
+    padding: 10px 20px;
+    border-radius: 5px;
 }
