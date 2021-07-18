@@ -118,16 +118,19 @@ input::placeholder {
     flex-direction: row;
     justify-content: space-between;
     align-items: flex-end;
+    border-bottom: 2px solid var(--pink);
+    width: 140px;
 }
 .bar {
     background-color: var(--blue);
     width: 47px;
     height: 120px;
-    margin-left: 35px;
+    /* margin-left: 35px; */
     font-size: 14px;
 }
 .legend {
     margin-top: 10px;
+    width: 170px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -136,15 +139,17 @@ input::placeholder {
 .user {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
+    
 }
-.profile-pic {
+.profile-pic img {
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    background-image: url(../images/plus.svg);
+    object-fit: cover;
 }
+
 .username {
     font-size: 14px;
     font-weight: var(--regular);
