@@ -4,7 +4,7 @@ def user_info(username):
     try:
         user = InstagramUser(username)
         if user.is_private:
-            return "Enter username of a public account"
+            return "Enter username of a public account!"
         else:
             print(user.number_of_followers)
             print(user.profile_picture_url)
@@ -27,4 +27,4 @@ def user_info(username):
             data["comments"] = comments
             return data
     except:
-        return "Username does not exist"
+        return "Username does not exist!"

@@ -1,5 +1,7 @@
 var submitBtn = document.getElementById('submit-btn');
-var userName = document.getElementById('user-name');
+var inputRow = document.getElementById('input-row');
+var inputArr = inputRow.getElementsByTagName('input');
+var userName = document.getElementById('user-name-1');
 
 submitBtn.addEventListener('click', function(event) {
     var http = new XMLHttpRequest();
@@ -28,7 +30,7 @@ submitBtn.addEventListener('click', function(event) {
     }
     else {
         document.getElementById('content').innerHTML = `<div class="error-message">
-                                                            Enter usernames to compare
+                                                            Enter usernames to compare!
                                                         </div>`;
     }
 });
