@@ -3,7 +3,6 @@ from flask import request
 
 from app import app
 
-# from scrape import *
 from app import scrape
 
 @app.route('/')

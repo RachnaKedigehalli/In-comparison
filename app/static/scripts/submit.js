@@ -32,7 +32,8 @@ submitBtn.addEventListener('click', function(event) {
                                     </div>`;
                     }
                 }
-                console.log(document.getElementById('graphs'));
+
+                // followers graph
                 document.getElementById('graphs').innerHTML = `<div class="graph">
                         <div class="caption">Number of followers</div>
             
@@ -44,6 +45,8 @@ submitBtn.addEventListener('click', function(event) {
                             ${details}
                         </div>
                     </div>`;
+                
+                // likes graph
                 document.getElementById('graphs').innerHTML += `<div class="graph">
                         <div class="caption">Total likes for last 10 posts</div>
             
@@ -55,6 +58,8 @@ submitBtn.addEventListener('click', function(event) {
                             ${details}
                         </div>
                     </div>`;
+                
+                // comments graph
                 document.getElementById('graphs').innerHTML += `<div class="graph">
                         <div class="caption">Total comments on last 10 posts</div>
             
@@ -67,26 +72,23 @@ submitBtn.addEventListener('click', function(event) {
                         </div>
                     </div>`;
                 
+                // proportional heights to bars
                 var maxFollowers = Math.max(...followersArr);
                 var maxLikes = Math.max(...likesArr);
                 var maxComments = Math.max(...commentsArr);
                 var usersNum = followersArr.length;
                 for (var i=0; i<usersNum; i++) {
                     var height = (followersArr[i]/maxFollowers) * 200;
-                    
                     document.querySelector(`#f${i+1}`).style.cssText += `height: ${height}px;`;
                     height = (likesArr[i]/maxLikes) * 200;
                     document.querySelector(`#l${i+1}`).style.cssText += `height: ${height}px;`;
                     height = (commentsArr[i]/maxComments) * 200;
                     document.querySelector(`#c${i+1}`).style.cssText += `height: ${height}px;`;
                 }
-                // console.log(document.querySelector('.display'));
                 for (var i=0; i<3; i++) {
                     document.getElementsByClassName('display')[i].style.cssText += `width: ${usersNum*70}px;`;
                     document.getElementsByClassName('legend')[i].style.cssText += `width: ${usersNum*70+30}px;`;
                 }
-                // document.getElementsByClassName('display')[1].style.cssText += `width: ${usersNum*70}px;`;
-                // document.querySelector('.legend').style.cssText += `width: ${usersNum*70+30}px;`;
             }
             else {
                 document.getElementById('graphs').innerHTML = `<div class="error-message">
@@ -101,7 +103,6 @@ submitBtn.addEventListener('click', function(event) {
         var number = 0;
         for (var i=0; i<inputArr.length; i++) {
             var userName = inputArr[i];
-            console.log(userName.value);
             if (userName.value) {
                 number += 1;
                 username_str += '&user'+ number + '=' + userName.value;
