@@ -99,3 +99,54 @@ input::placeholder {
     color: var(--blue);
     margin-top: 80px;
 }
+
+
+.graph {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.caption {
+    color: var(--blue);
+    font-weight: var(--regular);
+    font-size: var(--sub-heading);
+    margin-bottom: 30px;
+}
+.display {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+.bar {
+    background-color: var(--blue);
+    width: 47px;
+    height: 120px;
+    margin-left: 35px;
+    font-size: 14px;
+}
+.legend {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.user {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.profile-pic {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-image: url(../images/plus.svg);
+}
+.username {
+    font-size: 14px;
+    font-weight: var(--regular);
+    margin-top: 6px;
+}
