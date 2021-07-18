@@ -11,6 +11,63 @@ submitBtn.addEventListener('click', function(event) {
             var data = JSON.parse(this.responseText);
             if (data.valid) {
                 console.log(data.info);
+                var followersArr = [];
+                var likesArr = [];
+                var commentsArr = [];
+                var fbars = lbars = cbars = details = ``;
+                for (var i=0; i<data.info.length; i++) {
+                    if (data.info[i] instanceof Object) {
+                        console.log(data.info[i].followers);
+                        followersArr.push(data.info[i].followers);
+                        likesArr.push(data.info[i].likes);
+                        commentsArr.push(data.info[i].comments);
+                        fbars += `<div class="followers" id="f${i+1}">${data.info[i].followers}</div>`;
+                        lbars += `<div class="likes" id="l${i+1}">${data.info[i].likes}</div>`;
+                        cbars += `<div class="comments" id="c${i+1}">${data.info[i].comments}</div>`;
+                        details += `<div class="user">
+                        <!--
+                                        <div class="profile-pic">
+                                            <img src="${data.info[i].profile_picture_url}" alt="">
+                                        </div>
+                            -->
+                                        <div class="${data.info[i].user_name}">${data.info[i].user_name}</div>
+                                    </div>`;
+                    }
+                }
+                // console.log(document.getElementById('graphs'));
+                document.getElementById('graphs').innerHTML = `<div class="graph">
+                        <div class="caption">Number of followers</div>
+            
+                        <div class="display">
+                            ${fbars}
+                        </div>
+            
+                        <div class="legend">
+                            ${details}
+                        </div>
+                    </div>`;
+                document.getElementById('graphs').innerHTML += `<div class="graph">
+                        <div class="caption">Total likes for last 10 posts</div>
+            
+                        <div class="display">
+                            ${lbars}
+                        </div>
+            
+                        <div class="legend">
+                            ${details}
+                        </div>
+                    </div>`;
+                document.getElementById('graphs').innerHTML += `<div class="graph">
+                        <div class="caption">Total comments on last 10 posts</div>
+            
+                        <div class="display">
+                            ${cbars}
+                        </div>
+            
+                        <div class="legend">
+                            ${details}
+                        </div>
+                    </div>`;
             }
             else {
                 document.getElementById('content').innerHTML = `<div class="error-message">

@@ -93,6 +93,7 @@ input::placeholder {
 
 #content {
     text-align: center;
+    padding: 60px 165px 80px;
 }
 .error-message {
     font-size: var(--sub-heading);
@@ -100,7 +101,12 @@ input::placeholder {
     margin-top: 80px;
 }
 
-
+#graphs {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
 .graph {
     display: flex;
     flex-direction: column;
@@ -124,8 +130,26 @@ input::placeholder {
 .bar {
     background-color: var(--blue);
     width: 47px;
-    height: 120px;
+    height: 200px;
     /* margin-left: 35px; */
+    font-size: 14px;
+}
+.followers {
+    background-color: var(--blue);
+    width: 47px;
+    height: 200px;
+    font-size: 14px;
+}
+.likes {
+    background-color: var(--pink);
+    width: 47px;
+    height: 200px;
+    font-size: 14px;
+}
+.comments {
+    background-color: var(--navy-blue);
+    width: 47px;
+    height: 200px;
     font-size: 14px;
 }
 .legend {

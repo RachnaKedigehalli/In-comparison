@@ -24,4 +24,5 @@ def user():
                 data['valid'] = True
         else:
             data['info'].append("Enter usernames to compare!")
+    print(data)
     return data

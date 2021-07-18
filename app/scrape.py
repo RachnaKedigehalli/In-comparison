@@ -2,7 +2,7 @@ from instagramy import InstagramUser
 
 def user_info(username):
     try:
-        user = InstagramUser(username)
+        user = InstagramUser(username, sessionid='5874190559%3AyyzNE1LMHGh8oi%3A5')
         if user.is_private:
             return "Enter username of a public account!"
         else:
