@@ -8,31 +8,25 @@ submitBtn.addEventListener('click', function(event) {
 
     http.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
-            console.log(this.responseText);
-            console.log(typeof(this.responseText));
-            try {
-                var userData = JSON.parse(this.responseText);
-                console.log(userData);
-                // document.getElementById('content').innerHTML = ;
+            var data = JSON.parse(this.responseText);
+            if (data.valid) {
+                console.log(data.info);
             }
-            
-            catch(err) {
+            else {
                 document.getElementById('content').innerHTML = `<div class="error-message">
-                                                            ${this.responseText}
+                                                            ${data.info}
                                                         </div>`;
             }
         }
     };
 
     if(userName1.value) {
-        var usernames = [];
         var username_str = "";
         var number = 0;
         for (var i=0; i<inputArr.length; i++) {
             var userName = inputArr[i];
             console.log(userName.value);
             if (userName.value) {
-                // usernames.push(userName.value);
                 number += 1;
                 username_str += '&user'+ number + '=' + userName.value;
             }
