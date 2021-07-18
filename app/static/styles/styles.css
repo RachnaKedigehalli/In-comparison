@@ -98,7 +98,7 @@ input::placeholder {
 .error-message {
     font-size: var(--sub-heading);
     color: var(--blue);
-    margin-top: 80px;
+    margin-top: 20px;
 }
 
 #graphs {
@@ -126,31 +126,22 @@ input::placeholder {
     align-items: flex-end;
     border-bottom: 2px solid var(--pink);
     width: 140px;
-}
-.bar {
-    background-color: var(--blue);
-    width: 47px;
-    height: 200px;
-    /* margin-left: 35px; */
     font-size: 14px;
 }
 .followers {
     background-color: var(--blue);
+    color: var(--light-pink);
     width: 47px;
-    height: 200px;
-    font-size: 14px;
 }
 .likes {
     background-color: var(--pink);
+    color: var(--navy-blue);
     width: 47px;
-    height: 200px;
-    font-size: 14px;
 }
 .comments {
     background-color: var(--navy-blue);
+    color: var(--light-pink);
     width: 47px;
-    height: 200px;
-    font-size: 14px;
 }
 .legend {
     margin-top: 10px;
@@ -173,7 +164,6 @@ input::placeholder {
     border-radius: 50%;
     object-fit: cover;
 }
-
 .username {
     font-size: 14px;
     font-weight: var(--regular);
