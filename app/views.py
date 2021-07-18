@@ -12,9 +12,16 @@ def index():
 
 @app.route('/user')
 def user():
-    username = request.args.get('username')
-    data = scrape.user_info(username)
-    print(data)
-    print("---------------------")
-    print(type(data))
+    user_num = int(request.args.get('number'))
+
+    data = {'valid': False, 'info': []}
+    for i in range(user_num):
+        username = request.args.get('user'+str(i+1))
+        if username:
+            userInfo = scrape.user_info(username)
+            data['info'].append(userInfo)
+            if isinstance(userInfo, dict):
+                data['valid'] = True
+        else:
+            data['info'].append("Enter usernames to compare!")
     return data

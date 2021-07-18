@@ -3,9 +3,7 @@ var inputRow = document.getElementById('input-row');
 var inputArr = inputRow.getElementsByTagName('input');
 
 addBtn.addEventListener('click', function(event) {
-    // console.log(inputArr.length);
     var values = [];
-    var lastValue = inputArr[inputArr.length-1].value;
     for (var i=0; i<inputArr.length; i++) {
         var x = inputArr[i].value;
         values.push(x);

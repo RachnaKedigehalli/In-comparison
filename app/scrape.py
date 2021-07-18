@@ -6,8 +6,8 @@ def user_info(username):
         if user.is_private:
             return "Enter username of a public account!"
         else:
-            print(user.number_of_followers)
-            print(user.profile_picture_url)
+            # print(user.number_of_followers)
+            # print(user.profile_picture_url)
 
             data = {}
             data["user_name"] = user.username
@@ -18,11 +18,11 @@ def user_info(username):
             posts[:10]
             likes = comments = 0
 
-            print('\n\nLikes', 'Comments')
+            # print('\n\nLikes', 'Comments')
             for post in posts:
                 likes += post.likes
                 comments += post.comments
-                print(likes,comments)
+                # print(likes,comments)
             data["likes"] = likes
             data["comments"] = comments
             return data

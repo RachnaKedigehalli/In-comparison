@@ -1,7 +1,7 @@
 var submitBtn = document.getElementById('submit-btn');
 var inputRow = document.getElementById('input-row');
 var inputArr = inputRow.getElementsByTagName('input');
-var userName = document.getElementById('user-name-1');
+var userName1 = document.getElementById('user-name-1');
 
 submitBtn.addEventListener('click', function(event) {
     var http = new XMLHttpRequest();
@@ -24,8 +24,21 @@ submitBtn.addEventListener('click', function(event) {
         }
     };
 
-    if(userName.value) {
-        http.open("GET", `http://127.0.0.1:8000/user?username=${userName.value}`, true);
+    if(userName1.value) {
+        var usernames = [];
+        var username_str = "";
+        var number = 0;
+        for (var i=0; i<inputArr.length; i++) {
+            var userName = inputArr[i];
+            console.log(userName.value);
+            if (userName.value) {
+                // usernames.push(userName.value);
+                number += 1;
+                username_str += '&user'+ number + '=' + userName.value;
+            }
+                
+        }
+        http.open("GET", `http://127.0.0.1:8000/user?number=${number}`+ username_str, true);
         http.send();
     }
     else {
